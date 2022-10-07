@@ -1,0 +1,60 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.active-todos > h2,
+.complete-todos > h2 {
+  margin-bottom: 20px;
+}
+
+.todos-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 30% 30% 30%;
+  gap: 20px;
+}
+
+.todos-container > .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: var(--primary);
+  border: 2px solid var(--secondary);
+  gap: 30px;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+}
+
+.card-button > svg {
+  border-radius: 100%;
+  background-color: var(--secondary);
+  border: 2px solid var(--primary);
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+ 
+.card-button > svg polyline {
+  stroke: var(--primary);
+}
+
+.card-button > svg:hover {
+  transform: scale(105%);
+  background-color: var(--primary);
+  border: 2px solid var(--secondary);
+}
+
+.card-button > svg:hover polyline {
+  stroke: var(--secondary);
+}
+.card-button > svg:active {
+  transform: scale(90%);
+}

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
 
 :root {
-  --primary: #FFFFFF;
-  --secondary: #2A4D14;
-  --tertiary: #317B22;
+  --primary: #ffffff;
+  --secondary: #2a4d14;
+  --tertiary: #317b22;
 }
 
 * {
@@ -12,7 +12,7 @@
   outline: none;
   border: none;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 textarea {
@@ -30,5 +30,20 @@ textarea {
   max-width: 1440px;
   min-height: 100vh;
   height: 100%;
-  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 3% 5%;
+  background-color: var(--primary);
+  min-height: calc(100vh - 120px);
+}
+
+h1, h2, h3 {
+  color: var(--secondary);
+}
+
+h1 {
+  text-align: center;
 }
