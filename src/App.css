@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+:root {
+  --primary: #FFFFFF;
+  --secondary: #2A4D14;
+  --tertiary: #317B22;
+}
+
 * {
   margin: 0;
   padding: 0;
   outline: none;
   border: none;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 textarea {
