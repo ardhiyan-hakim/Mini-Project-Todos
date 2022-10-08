@@ -1,38 +1,41 @@
-import { GrFormNext } from "react-icons/gr";
+import { useSelector } from "react-redux";
+import CardTodo from "../CardTodo";
+
+function filterTodos(todos) {
+  const completedTodos = todos.filter((todo) => todo.completed === true);
+  const activeTodos = todos.filter((todo) => todo.completed === false);
+
+  return { activeTodos, completedTodos };
+}
 
 function TodosList({ active }) {
+  const { todos } = useSelector((state) => state);
+  const { activeTodos, completedTodos } = filterTodos(todos);
+
   return (
     <div className="todos-container">
       {active && (
-        <div className="card">
-          <div className="card-body">
-            <div className="card__header">
-              <h3>Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h3>
-            </div>
-            <div className="card__footer">
-              <p>Active</p>
-            </div>
-          </div>
-          <div className="card-button">
-            <GrFormNext />
-          </div>
-        </div>
+        <>
+          {activeTodos.map((activeTodo) => (
+            <CardTodo
+              key={activeTodo.id}
+              title={activeTodo.title}
+              completed={activeTodo.completed}
+            />
+          ))}
+        </>
       )}
 
       {!active && (
-        <div className="card">
-          <div className="card-body">
-            <div className="card__header">
-              <h3>Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h3>
-            </div>
-            <div className="card__footer">
-              <p>Complete</p>
-            </div>
-          </div>
-          <div className="card-button">
-            <GrFormNext />
-          </div>
-        </div>
+        <>
+          {completedTodos.map((completedTodo) => (
+            <CardTodo
+              key={completedTodo.id}
+              title={completedTodo.title}
+              completed={completedTodo.completed}
+            />
+          ))}
+        </>
       )}
     </div>
   );

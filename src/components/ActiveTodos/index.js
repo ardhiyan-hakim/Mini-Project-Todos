@@ -9,4 +9,4 @@ function ActiveTodos() {
   );
 }
 
-export default ActiveTodos
+export default ActiveTodos;
