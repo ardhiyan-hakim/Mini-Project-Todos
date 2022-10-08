@@ -27,14 +27,23 @@ function HomePage() {
     async function fetchData() {
       const result = await getTodos();
       dispatch(setTodos(result));
-    }
+      localStorage.setItem("todos", JSON.stringify(result));
 
-    fetchData();
+    }
+    
+    const currTodos = JSON.parse(localStorage.getItem('todos'));
+
+    if (currTodos === null) {
+      console.log('loading...')
+      fetchData();
+    } else {
+      dispatch(setTodos(currTodos));
+    }
   }, [dispatch]);
 
   return (
     <>
-       <Header />
+      <Header />
       <main>
         <h1>Todos</h1>
         <TodosContainer active={true} />
