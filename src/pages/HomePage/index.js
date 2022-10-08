@@ -2,13 +2,12 @@ import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 
 import "../../assets/styles/pages/HomePage.css";
-import ActiveTodos from "../../components/ActiveTodos";
-import CompleteTodos from "../../components/CompleteTodos";
 
 import { useDispatch } from "react-redux";
 import createInstance from "../../bootstrap/api";
 import { setTodos } from "../../bootstrap/action";
 import { useEffect } from "react";
+import TodosContainer from "../../components/TodosContainer";
 
 async function getTodos() {
   const api = createInstance(3000);
@@ -38,8 +37,8 @@ function HomePage() {
        <Header />
       <main>
         <h1>Todos</h1>
-        <ActiveTodos />
-        <CompleteTodos />
+        <TodosContainer active={true} />
+        <TodosContainer active={false} />
       </main>
       <Footer />
     </>

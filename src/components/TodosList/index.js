@@ -1,13 +1,6 @@
 import { useSelector } from "react-redux";
 import CardTodo from "../CardTodo";
 
-function filterTodos(todos) {
-  const completedTodos = todos.filter((todo) => todo.completed === true);
-  const activeTodos = todos.filter((todo) => todo.completed === false);
-
-  return { activeTodos, completedTodos };
-}
-
 function TodosList({ active }) {
   const { todos } = useSelector((state) => state);
   const { activeTodos, completedTodos } = filterTodos(todos);
@@ -16,7 +9,7 @@ function TodosList({ active }) {
     <div className="todos-container">
       {active && (
         <>
-          {activeTodos.map((activeTodo) => (
+          {activeTodos.slice(0, 10).map((activeTodo) => (
             <CardTodo
               key={activeTodo.id}
               title={activeTodo.title}
@@ -28,7 +21,7 @@ function TodosList({ active }) {
 
       {!active && (
         <>
-          {completedTodos.map((completedTodo) => (
+          {completedTodos.slice(0, 10).map((completedTodo) => (
             <CardTodo
               key={completedTodo.id}
               title={completedTodo.title}
@@ -39,6 +32,13 @@ function TodosList({ active }) {
       )}
     </div>
   );
+}
+
+function filterTodos(todos) {
+  const completedTodos = todos.filter((todo) => todo.completed === true);
+  const activeTodos = todos.filter((todo) => todo.completed === false);
+
+  return { activeTodos, completedTodos };
 }
 
 export default TodosList;
