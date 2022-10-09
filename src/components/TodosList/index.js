@@ -5,8 +5,8 @@ function TodosList({ active }) {
   const { todos } = useSelector((state) => state);
   const { activeTodos, completedTodos } = filterTodos(todos);
 
-  const currActiveTodos = activeTodos.slice(0, 10);
-  const currCompletedTodos = completedTodos.slice(0, 10);
+  const currActiveTodos = activeTodos.slice(0, 12);
+  const currCompletedTodos = completedTodos.slice(0, 12);
 
   return (
     <>
