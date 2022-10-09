@@ -9,17 +9,6 @@ import { setTodos } from "../../bootstrap/action";
 import { useEffect } from "react";
 import TodosContainer from "../../components/TodosContainer";
 
-async function getTodos() {
-  const api = createInstance(3000);
-
-  try {
-    const { data } = await api.get("/todos");
-    return await data;
-  } catch (err) {
-    console.error(err);
-  }
-}
-
 function HomePage() {
   const dispatch = useDispatch();
 
@@ -53,5 +42,17 @@ function HomePage() {
     </>
   );
 }
+
+async function getTodos() {
+  const api = createInstance(3000);
+
+  try {
+    const { data } = await api.get("/todos");
+    return await data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 
 export default HomePage;

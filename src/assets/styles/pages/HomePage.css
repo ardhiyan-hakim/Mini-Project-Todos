@@ -6,6 +6,11 @@ main {
 
 .active-todos > h2,
 .completed-todos > h2 {
+  margin-bottom: 10px;
+}
+
+.active-todos h4,
+.completed-todos h4 {
   margin-bottom: 20px;
 }
 
