@@ -23,7 +23,6 @@ function HomePage() {
     const currTodos = JSON.parse(localStorage.getItem('todos'));
 
     if (currTodos === null) {
-      console.log('loading...')
       fetchData();
     } else {
       dispatch(setTodos(currTodos));

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import NotFoundPage from "./pages/NotFoundPage";
+
 import { Provider } from "react-redux";
 import store from "./bootstrap/store";
 
