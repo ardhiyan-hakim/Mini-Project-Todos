@@ -15,9 +15,9 @@ function App() {
         <Provider store={store}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<HomePage />}></Route>
-              <Route path="/detail" element={<DetailPage />}></Route>
-              <Route path="/*" element={<NotFoundPage />}></Route>
+              <Route path="/Mini-Project-Todos/" element={<HomePage />}></Route>
+              <Route path="/Mini-Project-Todos/detail" element={<DetailPage />}></Route>
+              <Route path="/Mini-Project-Todos/*" element={<NotFoundPage />}></Route>
             </Routes>
           </BrowserRouter>
         </Provider>
